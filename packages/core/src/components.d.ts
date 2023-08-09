@@ -5,6 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MyEvent } from "./types/MyEvent";
+import { Currency } from "./types/Currency";
+export { MyEvent } from "./types/MyEvent";
+export { Currency } from "./types/Currency";
 export namespace Components {
     interface MyComponent {
         /**
@@ -20,6 +24,10 @@ export namespace Components {
          */
         "middle": string;
     }
+}
+export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyComponentElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -46,6 +54,7 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+        "onMyChange"?: (event: MyComponentCustomEvent<MyEvent<Currency>>) => void;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
