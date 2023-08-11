@@ -1,11 +1,10 @@
 {
   "name": "nested-generics-repro",
   "version": "1.0.0",
-  "workspace": {
-    "packages": [
-      "packages/*"
-    ]
-  },
+  "workspace": [
+    "packages/core",
+    "packages/angular-lib"
+  ],
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,5 +12,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@stencil/angular-output-target": "^0.7.2-dev.11691686917.1045ccb9"
+  }
 }

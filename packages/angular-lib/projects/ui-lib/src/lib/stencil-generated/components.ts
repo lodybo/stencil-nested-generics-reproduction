@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import { Components } from 'stencil-library';
+import { Components } from 'core';
 
 
 @ProxyCmp({
@@ -27,12 +27,12 @@ export class MyComponent {
 }
 
 
-import type { MyEvent as IMyComponentMyEvent } from 'stencil-library';
-import type { Currency as IMyComponentCurrency } from 'stencil-library';
+import type { MyEvent as IMyComponentMyEvent } from 'core';
+import type { Currency as IMyComponentCurrency } from 'core';
 
 export declare interface MyComponent extends Components.MyComponent {
 
-  myChange: EventEmitter<CustomEvent<IMyComponentIMyComponentMyEvent<[object Object]>>>;
+  myChange: EventEmitter<CustomEvent<IMyComponentMyEvent<IMyComponentCurrency>>>;
 }
 
 

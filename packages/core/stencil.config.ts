@@ -19,7 +19,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
     angularOutputTarget({
-      componentCorePackage: 'stencil-library',
+      componentCorePackage: 'core',
       directivesProxyFile: '../angular-lib/projects/ui-lib/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular-lib/projects/ui-lib/src/lib/stencil-generated/index.ts',
     }),
